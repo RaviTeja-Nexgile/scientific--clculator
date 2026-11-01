@@ -1,0 +1,35 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing);
+  padding: calc(var(--spacing) * 1.25) calc(var(--spacing) * 1.5);
+  font-size: 1rem;
+  border: 1px solid var(--text);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: filter 0.1s ease;
+}
+
+.toggle:hover {
+  filter: brightness(1.2);
+}
+
+.toggle:active {
+  filter: brightness(0.85);
+}
+
+.toggle:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.text {
+  font-weight: 600;
+}

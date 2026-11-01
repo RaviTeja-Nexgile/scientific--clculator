@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 import { evaluate, type AngleMode } from "../evaluator/evaluate";
+import AngleModeToggle from "./AngleModeToggle";
 import Display from "./Display";
 import Keypad from "./Keypad";
 import styles from "./Calculator.module.css";
 
-/** The angle mode is fixed to DEG until the angle-mode toggle task wires it. */
+/** The default angle mode. */
 const DEFAULT_MODE: AngleMode = "DEG";
 
 /**
@@ -16,7 +17,7 @@ export default function Calculator() {
   const [expression, setExpression] = useState("");
   const [result, setResult] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const mode: AngleMode = DEFAULT_MODE;
+  const [mode, setMode] = useState<AngleMode>(DEFAULT_MODE);
 
   const append = useCallback((value: string) => {
     setExpression((prev) => prev + value);
@@ -96,6 +97,7 @@ export default function Calculator() {
 
   return (
     <div className={styles.calculator}>
+      <AngleModeToggle mode={mode} onModeChange={setMode} />
       <Display expression={expression} result={result} error={error} mode={mode} />
       <Keypad
         onAppend={append}

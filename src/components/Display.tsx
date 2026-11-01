@@ -12,15 +12,23 @@ export interface DisplayProps {
 }
 
 /**
- * Shows the expression as the user types it, the result after evaluation, the
- * current angle mode, and any error message.
+ * Format a numeric result for display, rounding away floating-point noise
+ * (e.g. 0.49999999999999994 → 0.5, -0.9880316240928618 → -0.988) while
+ * preserving integers exactly.
  */
+function formatResult(value: number): string {
+  // Round to 3 decimal places to remove floating-point representation error,
+  // then strip any trailing zeros and a trailing decimal point.
+  const rounded = Number(value.toFixed(3));
+  return String(rounded);
+}
+
 export default function Display({ expression, result, error, mode }: DisplayProps) {
   let content: string;
   if (error !== null) {
     content = error;
   } else if (result !== null) {
-    content = String(result);
+    content = formatResult(result);
   } else if (expression === "") {
     content = "0";
   } else {

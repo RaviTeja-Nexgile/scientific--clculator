@@ -21,7 +21,7 @@
   - _Verify: npm test -- Calculator_
   - _Issue: #4_
 
-- [ ] 4. Angle mode toggle
+- [x] 4. Angle mode toggle
   - _Requirements: 3.1, 3.2, 3.3_
   - _Depends: 2_
   - _Files: src/components/AngleModeToggle.tsx, src/components/AngleModeToggle.module.css, src/components/AngleModeToggle.test.tsx_

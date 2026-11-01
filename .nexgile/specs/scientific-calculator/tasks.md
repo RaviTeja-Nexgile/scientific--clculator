@@ -35,7 +35,7 @@
   - _Verify: npm test -- MemoryButtons_
   - _Issue: #6_
 
-- [ ] 6. History panel
+- [x] 6. History panel
   - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5_
   - _Depends: 2_
   - _Files: src/components/HistoryPanel.tsx, src/components/HistoryPanel.module.css, src/components/HistoryPanel.test.tsx_

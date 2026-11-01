@@ -28,7 +28,7 @@
   - _Verify: npm test -- AngleModeToggle_
   - _Issue: #5_
 
-- [ ] 5. Memory functions
+- [x] 5. Memory functions
   - _Requirements: 4.1, 4.2, 4.3, 4.4_
   - _Depends: 2_
   - _Files: src/components/MemoryButtons.tsx, src/components/MemoryButtons.module.css, src/components/MemoryButtons.test.tsx_

@@ -7,7 +7,7 @@
   - _Verify: npm run build_
   - _Issue: #1_
 
-- [ ] 2. Expression evaluator
+- [x] 2. Expression evaluator
   - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 2.10_
   - _Depends: 1_
   - _Files: src/evaluator/evaluate.ts, src/evaluator/evaluate.test.ts_

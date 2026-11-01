@@ -3,6 +3,7 @@ import { evaluate, type AngleMode } from "../evaluator/evaluate";
 import AngleModeToggle from "./AngleModeToggle";
 import Display from "./Display";
 import Keypad from "./Keypad";
+import MemoryButtons from "./MemoryButtons";
 import styles from "./Calculator.module.css";
 
 /** The default angle mode. */
@@ -47,6 +48,13 @@ export default function Calculator() {
       setError(value.message);
     }
   }, [expression, mode]);
+
+  const recall = useCallback(
+    (value: number) => {
+      append(String(value));
+    },
+    [append],
+  );
 
   // Keyboard input: digits, operators, Enter (=), Backspace (delete), Escape (clear).
   useEffect(() => {
@@ -99,6 +107,7 @@ export default function Calculator() {
     <div className={styles.calculator}>
       <AngleModeToggle mode={mode} onModeChange={setMode} />
       <Display expression={expression} result={result} error={error} mode={mode} />
+      <MemoryButtons result={result} onRecall={recall} />
       <Keypad
         onAppend={append}
         onEquals={equals}

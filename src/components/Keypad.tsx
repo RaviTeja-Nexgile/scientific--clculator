@@ -32,6 +32,8 @@ const OPERATORS: KeyDef[] = [
   { label: "÷", insert: "÷", kind: "operator" },
   { label: "%", insert: "%", kind: "operator" },
   { label: "√", insert: "√(", kind: "operator" },
+  { label: "(", insert: "(", kind: "operator" },
+  { label: ")", insert: ")", kind: "operator" },
 ];
 
 const FUNCTIONS: KeyDef[] = [

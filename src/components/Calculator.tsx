@@ -104,6 +104,14 @@ export default function Calculator() {
         append("%");
         return;
       }
+      if (key === "(") {
+        append("(");
+        return;
+      }
+      if (key === ")") {
+        append(")");
+        return;
+      }
       if (key === "Enter" || key === "=") {
         equals();
         return;

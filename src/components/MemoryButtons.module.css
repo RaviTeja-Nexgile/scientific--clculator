@@ -1,0 +1,34 @@
+.memoryButtons {
+  display: flex;
+  gap: var(--spacing);
+}
+
+.button {
+  flex: 1;
+  padding: calc(var(--spacing) * 1.5);
+  font-size: 1rem;
+  border: 1px solid var(--text);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: filter 0.1s ease;
+}
+
+.button:hover:not(:disabled) {
+  filter: brightness(1.2);
+}
+
+.button:active:not(:disabled) {
+  filter: brightness(0.85);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

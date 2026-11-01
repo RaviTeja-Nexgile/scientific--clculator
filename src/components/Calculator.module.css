@@ -1,0 +1,120 @@
+.calculator {
+  width: min(100%, 360px);
+  padding: calc(var(--spacing) * 2);
+  background: var(--surface);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 2);
+}
+
+.display {
+  background: var(--background);
+  border-radius: var(--radius);
+  padding: calc(var(--spacing) * 2);
+  min-height: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: calc(var(--spacing) / 2);
+  overflow-x: auto;
+}
+
+.mode {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.value {
+  font-size: 2rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.keypad {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
+
+.functions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing);
+}
+
+.digits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing);
+}
+
+.operators {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing);
+}
+
+.key {
+  padding: calc(var(--spacing) * 1.5);
+  font-size: 1.25rem;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--background);
+  color: var(--text);
+  cursor: pointer;
+  transition: filter 0.1s ease;
+}
+
+.key:hover {
+  filter: brightness(1.2);
+}
+
+.key:active {
+  filter: brightness(0.85);
+}
+
+.key:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.keyDigit {
+  background: var(--background);
+}
+
+.keyOperator {
+  background: var(--surface);
+  border: 1px solid var(--text);
+}
+
+.keyFunction {
+  background: var(--surface);
+  font-size: 1rem;
+}
+
+.keyClear {
+  background: var(--error);
+  color: #ffffff;
+}
+
+.keyDelete {
+  background: var(--surface);
+  border: 1px solid var(--text);
+}
+
+.keyEquals {
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 700;
+}

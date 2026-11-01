@@ -1,6 +1,6 @@
 # Tasks: Scientific Calculator
 
-- [ ] 1. Project setup
+- [x] 1. Project setup
   - _Requirements: 1.1_
   - _Files: package.json, tsconfig.json, vite.config.ts, index.html, src/main.tsx, src/App.tsx, src/styles/global.css, README.md, .gitignore, .env.example, e2e/.gitkeep_
   - _Verify: npm install && npm test_

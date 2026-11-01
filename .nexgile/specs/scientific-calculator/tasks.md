@@ -49,7 +49,7 @@
   - _Verify: npm test -- ThemeToggle_
   - _Issue: #3_
 
-- [ ] 8. Deployment setup
+- [x] 8. Deployment setup
   - _Requirements: 1.9_
   - _Depends: 1, 2, 3, 4, 5, 6, 7_
   - _Files: netlify.toml_

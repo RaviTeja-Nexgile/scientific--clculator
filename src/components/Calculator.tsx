@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { evaluate, type AngleMode } from "../evaluator/evaluate";
 import AngleModeToggle from "./AngleModeToggle";
+import ThemeToggle from "./ThemeToggle";
 import Display from "./Display";
 import HistoryPanel, {
   addHistoryEntry,
@@ -124,6 +125,7 @@ export default function Calculator() {
   return (
     <div className={styles.calculator}>
       <AngleModeToggle mode={mode} onModeChange={setMode} />
+      <ThemeToggle />
       <Display expression={expression} result={result} error={error} mode={mode} />
       <MemoryButtons result={result} onRecall={recall} />
       <Keypad

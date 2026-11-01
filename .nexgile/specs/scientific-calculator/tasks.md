@@ -14,7 +14,7 @@
   - _Verify: npm test -- evaluate_
   - _Issue: #2_
 
-- [ ] 3. Calculator display and keypad
+- [x] 3. Calculator display and keypad
   - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8_
   - _Depends: 2_
   - _Files: src/components/Display.tsx, src/components/Keypad.tsx, src/components/Calculator.tsx, src/components/Calculator.module.css, src/components/Calculator.test.tsx_

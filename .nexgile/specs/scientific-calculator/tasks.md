@@ -42,7 +42,7 @@
   - _Verify: npm test -- HistoryPanel_
   - _Issue: #7_
 
-- [ ] 7. Theme toggle
+- [x] 7. Theme toggle
   - _Requirements: 6.1, 6.2_
   - _Depends: 1_
   - _Files: src/components/ThemeToggle.tsx, src/components/ThemeToggle.module.css, src/components/ThemeToggle.test.tsx_

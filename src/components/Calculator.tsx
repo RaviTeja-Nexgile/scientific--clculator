@@ -2,6 +2,10 @@ import { useCallback, useEffect, useState } from "react";
 import { evaluate, type AngleMode } from "../evaluator/evaluate";
 import AngleModeToggle from "./AngleModeToggle";
 import Display from "./Display";
+import HistoryPanel, {
+  addHistoryEntry,
+  type HistoryEntry,
+} from "./HistoryPanel";
 import Keypad from "./Keypad";
 import MemoryButtons from "./MemoryButtons";
 import styles from "./Calculator.module.css";
@@ -19,6 +23,7 @@ export default function Calculator() {
   const [result, setResult] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [mode, setMode] = useState<AngleMode>(DEFAULT_MODE);
+  const [history, setHistory] = useState<HistoryEntry[]>([]);
 
   const append = useCallback((value: string) => {
     setExpression((prev) => prev + value);
@@ -43,11 +48,24 @@ export default function Calculator() {
     if (typeof value === "number") {
       setResult(value);
       setError(null);
+      setHistory((prev) =>
+        addHistoryEntry(prev, { expression, result: value }),
+      );
     } else {
       setResult(null);
       setError(value.message);
     }
   }, [expression, mode]);
+
+  const selectHistory = useCallback((entry: HistoryEntry) => {
+    setExpression(entry.expression);
+    setResult(entry.result);
+    setError(null);
+  }, []);
+
+  const clearHistory = useCallback(() => {
+    setHistory([]);
+  }, []);
 
   const recall = useCallback(
     (value: number) => {
@@ -113,6 +131,11 @@ export default function Calculator() {
         onEquals={equals}
         onClear={clear}
         onDelete={deleteLast}
+      />
+      <HistoryPanel
+        history={history}
+        onSelect={selectHistory}
+        onClear={clearHistory}
       />
     </div>
   );

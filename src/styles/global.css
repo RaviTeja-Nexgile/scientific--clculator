@@ -1,0 +1,100 @@
+:root {
+  --background: #0f1115;
+  --surface: #1a1d24;
+  --text: #e6e8ec;
+  --primary: #4f8cff;
+  --error: #ff5c5c;
+  --success: #34c77b;
+  --radius: 12px;
+  --spacing: 8px;
+  --font: -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator {
+  width: min(100%, 360px);
+  padding: calc(var(--spacing) * 2);
+  background: var(--surface);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 2);
+}
+
+.display {
+  background: var(--background);
+  border-radius: var(--radius);
+  padding: calc(var(--spacing) * 2);
+  font-size: 2rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  min-height: 4rem;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.keypad {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
+
+.keypad-digits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing);
+}
+
+.keypad-operators {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing);
+}
+
+.key {
+  padding: calc(var(--spacing) * 1.5);
+  font-size: 1.25rem;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--background);
+  color: var(--text);
+  cursor: pointer;
+  transition: filter 0.1s ease;
+}
+
+.key:hover {
+  filter: brightness(1.2);
+}
+
+.key:active {
+  filter: brightness(0.85);
+}
+
+.key:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.key-operator {
+  background: var(--surface);
+  border: 1px solid var(--text);
+}

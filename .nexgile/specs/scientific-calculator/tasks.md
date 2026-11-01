@@ -63,3 +63,4 @@
   - _Requirements: 2.1, 2.2, 2.6, 2.7, 2.8_
   - _Files: **_
   - _Verify: npm test_
+  - _Issue: #17_
